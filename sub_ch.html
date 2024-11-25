@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Reset 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #101010;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* 전체 컨테이너 */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 캐릭터 이미지 */
+.character-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-bottom: 20px;
+}
+
+/* 한 줄 문구 */
+.quote p {
+  font-size: 18px;
+  font-style: italic;
+  color: #bbbbbb;
+  margin-bottom: 30px;
+}
+
+/* 설명 */
+.description {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* 버튼 스타일 */
+.background-story {
+  background-color: #444444;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.background-story:hover {
+  background-color: #666666;
+}
+</style>
+<body>
+  <div class="container">
+    <div class="character-image">
+      <!-- 캐릭터 이미지 -->
+      <img src="토토로 4.png" alt="캐릭터 이미지">
+    </div>
+    <div class="quote">
+      <!-- 한 줄 문구 -->
+      <p>"운명을 부정할수록 우리의 믿음은 굳건해진다."</p>
+    </div>
+    <div class="description">
+      <!-- 설명 -->
+      <h2>달</h2>
+      <p>
+        그림자에서 나타나는 아펠리오스는 음울한 적막 속에서 적을 쓰러뜨린다. 
+        정확한 조준과 충성만이 그의 목소리를 대신한다. 
+        독에 중독되어 말을 할 수 없게 되었지만, 먼 사원에 있는 쌍둥이 여동생 알룬이 
+        그를 인도하며 월식의 힘을 그의 손에 쥐여 준다. 
+        하늘에서 달이 빛나는 한 아펠리오스는 결코 혼자가 아니다.
+      </p>
+    </div>
+    <button class="background-story">배경 이야기 읽기 ➜</button>
+  </div>
+</body>
+</html>
