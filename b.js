@@ -7,12 +7,12 @@ const images = [
     'laputa.jpg'
 ];
 const imageLinks = [
-    'totoro.html', // '1.jpg'에 연결된 링크
-    'cat.html', // '7.jpg'에 연결된 링크
-    'haul.html', // '3.jpeg'에 연결된 링크
-    'sen.html', // '4.jpg'에 연결된 링크
-    'ponyo.html',  // '5.jpg'에 연결된 링크
-    'laputa.html' // '6.jpg'에 연결된 링크
+    'https://tngodj.github.io/Totoro/', // '1.jpg'에 연결된 링크
+    'https://tngodj.github.io/Cat/', // '7.jpg'에 연결된 링크
+    'https://tngodj.github.io/Haul/', // '3.jpeg'에 연결된 링크
+    'https://tngodj.github.io/Sen-Chihiro/', // '4.jpg'에 연결된 링크
+    'https://tngodj.github.io/Ponyo/',  // '5.jpg'에 연결된 링크
+    'https://tngodj.github.io/Laputa/' // '6.jpg'에 연결된 링크
 ];
 
 
