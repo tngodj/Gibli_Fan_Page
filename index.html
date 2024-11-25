@@ -3,23 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Studio Ghibli Carousel with Scroll Character</title>
+    <style>
+    /* 기본 스타일 */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* 페이지 기본 설정 */
+    body, html {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2efe4;
+        font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+        overflow-y: scroll;
+    }
+
+    /* 섹션 스타일 */
+    .section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+        position: relative;
+    }
+
+    .intro-section {
+        background-color: #e6f7ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    /* GIF 이미지 컨테이너 스타일 */
+    .gif-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        min-height:40vh;
+        height: 100%;
+        z-index: 1;
+        opacity: 0.6; /* GIF 이미지 투명도 */
+        overflow: hidden;
+    }
+
+    /* JPG 이미지 컨테이너 스타일 */
+    .jpg-container{
+    position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.6; /* GIF 이미지 투명도 */
+        overflow: hidden;
+    }
+
+    /* 하단 GIF 섹션 스타일 */
+    .bottom-gif-section {
+        width: 100%;
+        min-height: 100vh;
+        height: auto; /* 섹션 높이 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ececec;
+        position: relative;
+        overflow: hidden;
+    }
+   
+    .bottom-gif-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0.8;
+        overflow: hidden;
+    }
+
+
+    /* 하단 GIF 이미지 */
+    .gif-bottom {
+        position: absolute;
+        left: 0%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.9);
+    }
+
+    /* 오른쪽 GIF 이미지 */
+    .gif-right {
+        position: absolute;
+        right: -10%;
+        top: 0;
+        width: 120%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.9);
+    }
+
+    /* 본문 JPG 이미지 */
+
+    .jpg-middle {
+        position: absolute;
+        right: -10%;
+        top: 0;
+        width: 120%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(1.0);
+    }
+
+    /* 소개란 */
+    .intro-container {
+        position: relative;
+        width: 60%;
+        max-width: 700px;
+        background-color: rgba(255, 255, 240, 0.9);
+        padding: 30px;
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+        border: 2px solid #c1e1ec;
+        border-radius: 15px;
+        text-align: center;
+        z-index: 2;
+    }
+
+    /* 소개란 텍스트 스타일 */
+    .intro-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #5d4037;
+        font-family: 'Garamond', 'Papyrus', sans-serif;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .intro-description {
+        font-size: 1.1rem;
+        color: #5d4037;
+        margin-top: 10px;
+        line-height: 1.7;
+    }
+
+    /* 캐러셀 섹션 */
+    .carousel-section {
+    background: url('carousel-background.jpg') center/cover no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 0; /* 여백 제거 */
+    margin: 0; /* 여백 제거 */
+    opacity: 0.9;
+    }
+
+    .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%; /* 전체 폭으로 설정 */
+    padding: 0; /* 여백 제거 */
+    /*background-color: rgba(250, 245, 235, 0.95);*/
+    border-radius: 15px;
+    border: 2px solid #f5c6c6;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-image {
+        max-width: 100%;
+        max-height: 100%;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        border: 2px solid #d4b483;
+        border-radius: 10px;
+        filter: brightness(0.9);
+    }
+
+    .carousel-image:hover {
+        transform: scale(1.05);
+        filter: brightness(1);
+    }
+
+    .carousel-button {
+        background-color: blanchedalmond;
+        border: none;
+        width: 40px;
+        height: 40px;
+        /*font-size: 1.5rem;*/
+        /*cursor: pointer;*/
+        padding: 10px 15px;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        top: 50%;
+        /*transform: translateY(-50%);*/
+        color: white;
+        transition: transform 0.3s;
+    }
+
+    #prevBtn {
+        left: 10px;
+        background-image: url(9.jpg);
+    }
+
+    #nextBtn {
+        right: 10px;
+        background-image: url(9.jpg);
+    }
+
+    .carousel-button:active {
+        transform: translateY(-50%) scale(1.2);
+    }
+
+    /* 스크롤바 스타일 */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f5e1d5;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #d3b3a5;
+        border-radius: 10px;
+        border: 2px solid #f5e1d5;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #b28d7a;
+    }
+
+    /* 스크롤 캐릭터 이미지 스타일 */
+    .scroll-character {
+        position: fixed;
+        right: 15px;
+        bottom: 30px;
+        width: 50px;
+        height: 50px;
+        opacity: 0.8;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .scroll-character:hover {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Web Lecture</h1>
-    <h2>Hello HTML5</h2>
+    <!-- 소개란 섹션 -->
+    <div class="section intro-section">
 
-    <div>
-        학번 : 202058008 <br>
-        이름 : 김수민
+        <!--  뒷배경 GIF 이미지 -->
+        <div class="gif-container">
+            <img src="가오나시.gif" alt="Ghibli GIF" class="gif-right">
+        </div>
+
+        <!-- 소개란 -->
+        <div class="intro-container">
+            <div class="intro-title">Studio Ghibli</div>
+            <div class="intro-description">
+                Studio Ghibli는 세계적으로 사랑받는 일본의 애니메이션 스튜디오로, 감동적이고 아름다운 스토리텔링으로 잘 알려져 있습니다. 대표작으로는 <em>My Neighbor Totoro</em>, <em>Spirited Away</em> 등이 있으며, 자연과 조화를 이루는 이야기를 통해 전 세계의 마음을 사로잡았습니다.
+            </div>
+        </div>
     </div>
 
-
-    <h3>예제 바로가기 </h3>
-    <ul>
-        <li> <a href="webBle"> wenBle sample </a> </li>
-        <li> <a href="pds/css"> css sample </a> </li>
-    </ul>
+    <!-- 캐러셀 섹션 -->
+    <div class="section carousel-section">
     
+        <!-- 본문 배경 -->
+        <div class="jpg-container">
+            <img src="포뇨 GIF 1.gif" alt="Ghibli jpg" class="jpg-middle">
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-button" id="prevBtn">&#9664;</button>
+            <img src="totoro.jpeg" alt="Carousel Image" class="carousel-image" id="carouselImage">
+            <button class="carousel-button" id="nextBtn">&#9654;</button>
+    </div>
+    </div>
+        
+    <!-- 하단 GIF 섹션 -->
+        <div class="section bottom-gif-section">
+            <div class="bottom-gif-container">
+                <img src="리사 GIF.gif" alt="Ghibli GIF" class="gif-bottom">
+            </div>
+        </div>
+    
+    
+
+    <!-- 스크롤 캐릭터 이미지 -->
+    <img src="gif-1.gif" alt="Scroll Character" class="scroll-character">
+
+    <script src="b.js"></script>
 </body>
 </html>
