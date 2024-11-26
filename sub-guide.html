@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -243,23 +244,27 @@
         }
 
         .character-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
         }
 
-        .champion-details {
-            padding: 10px;
+        .character-details {
+        text-align: center;
+        padding: 10px;
         }
 
-        .champion-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin: 5px 0;
+        .character-name {
+        font-size: 1.2rem; /* 크기 조정 */
+        font-weight: bold;
+        color: #ffffff; /* 흰색 텍스트 */
+        font-family: 'Arial', sans-serif; /* 깔끔한 폰트 */
+        margin: 5px 0;
         }
 
-        .champion-role {
-            font-size: 0.9rem;
-            color: #bbb;
+        .character-role {
+        font-size: 1rem; /* 조금 작은 크기 */
+        color: #cccccc; /* 밝은 회색 텍스트 */
+        font-family: 'Arial', sans-serif; /* 동일한 폰트 */
         }
         /* 마우스를 이미지에 올렸을 때 효과 */
         .character-card:hover img {
@@ -274,8 +279,8 @@
         <img src="토토로 4.png" alt="Character Image" class="character-image">
         <!-- 타이틀 -->
         <div class="character-title">
-            <h1>아펠리오스</h1>
-            <h2>신념의 무기</h2>
+            <h1>토토로</h1>
+            <h2>귀요미</h2>
         </div>
     </div>
 
@@ -290,8 +295,8 @@
         
         <!-- 인용구 섹션 -->
         <div class="quote-section">
-            <p>“운명을 부정할수록 우리의 믿음은 굳건해져.”</p>
-            <div class="quote-author">~ 알룬</div>
+            <p>“우웅”</p>
+            <div class="quote-author">귀요미</div>
         </div>
         <div class="description">
           <!-- 설명 -->
@@ -311,14 +316,14 @@
         <!-- 숨겨진 콘텐츠 -->
         <div id="additional-content" style="display: none;">
           <div class="image-gallery">
-            <img src="image1.jpg" alt="이미지 1">
-            <img src="image2.jpg" alt="이미지 2">
-            <img src="image3.jpg" alt="이미지 3">
-            <img src="image4.jpg" alt="이미지 4">
+            <img src="토토로 4.png" alt="이미지 1">
+            <img src="토토로 4.png" alt="이미지 2">
+            <img src="토토로 4.png" alt="이미지 3">
+            <img src="토토로 4.png" alt="이미지 4">
           </div>
           <div class="video-section">
             <h3>캐릭터 영상</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/example" 
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nqAxRJhUT3k?si=iB3auiq6o0Vj1O5Q" 
               title="YouTube video player" frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
@@ -326,36 +331,59 @@
           </div>
         </div>
       </div>
+      <!--다른 캐릭터 보기-->
       <div class="champion-section">
-        <h3>다른 챔피언 보기</h3>
+        <h2>다른 챔피언 보기</h2>
         <div class="champion-cards">
-          <div class="champion-card">
-            <a href="https://example.com/character1" target="_blank">
-            <img src="토토로 4.png" alt="아트록스">
-        </a>
-        <!--
-            <div class="champion-info">
-              <p>아트록스</p>
-              <span>룬테라</span>
+            <!-- 첫 번째 카드 -->
+            <div class="champion-card">
+                <a href="https://example.com/character1" target="_blank">
+                    <img src="토토로 4.png" alt="아펠리오스">
+                    <div class="character-details">
+                        <div class="character-name">아펠리오스</div>
+                        <div class="character-role">이웃집 토토로</div>
+                    </div>
+                </a>
             </div>
-        -->
-            <div class="character-details">
-                <div class="character-name">아펠리오스</div>
-                <div class="character-role">타곤</div>
-                <a href="https://example.com/character1" target="_blank" class="view-link">살펴보기</a>
+    
+            <!-- 두 번째 카드 -->
+            <div class="champion-card">
+                <a href="https://example.com/character2" target="_blank">
+                    <img src="토토로 4.png" alt="알리스타">
+                    <div class="character-details">
+                        <div class="character-name">알리스타</div>
+                        <div class="character-role">이웃집 토토로</div>
+                    </div>
+                </a>
             </div>
-
-          </div>
-          <div class="champion-card">
-            <img src="토토로 4.png" alt="알리스타">
-            <div class="champion-info">
-              <p>알리스타</p>
-              <span>룬테라</span>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
+    <!-- 다른 영화-->
+    <div class="champion-section">
+        <h3>다른 영화 보기</h3>
+        <div class="champion-cards">
+            <!-- 첫 번째 카드 -->
+            <div class="champion-card">
+                <a href="https://tngodj.github.io/Cat/" target="_blank">
+                    <img src="토토로 4.png" alt="아펠리오스">
+                    <div class="character-details">
+                        <div class="character-name">고양이의 보은</div>
+                    </div>
+                </a>
+            </div>
+    
+            <!-- 두 번째 카드 -->
+            <div class="champion-card">
+                <a href="https://tngodj.github.io/Haul/" target="_blank">
+                    <img src="토토로 4.png" alt="알리스타">
+                    <div class="character-details">
+                        <div class="character-name">하울의 움직이는 성</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
       <script>
         function showMoreContent() {
         const content = document.getElementById("additional-content");
@@ -364,3 +392,4 @@
         </script>
 </body>
 </html>
+캐릭터 소개 페이지
