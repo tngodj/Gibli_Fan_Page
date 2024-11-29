@@ -97,7 +97,7 @@ function clickSubButton(buttonId) {
             window.location.href = "https://tngodj.github.io/OST_Game"; // 버튼 2 클릭 시 이동할 URL
             break;
         case 3:
-            window.location.href = "https://tngodj.github.io/Character-Name-Game/"; // 버튼 3 클릭 시 이동할 URL
+            window.location.href = "https://tngodj.github.io/Character-Name-Game"; // 버튼 3 클릭 시 이동할 URL
             break;
         default:
             console.error("잘못된 버튼 ID입니다."); // 디버그용
