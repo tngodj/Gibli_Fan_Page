@@ -94,7 +94,7 @@ function clickSubButton(buttonId) {
             window.location.href = "https://tngodj.github.io/Gibli-WorldCup-Main/"; // 버튼 1 클릭 시 이동할 URL
             break;
         case 2:
-            window.location.href = "https://example.com/page2"; // 버튼 2 클릭 시 이동할 URL
+            window.location.href = "https://tngodj.github.io/OST_Game/"; // 버튼 2 클릭 시 이동할 URL
             break;
         case 3:
             window.location.href = "https://example.com/page3"; // 버튼 3 클릭 시 이동할 URL
