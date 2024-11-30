@@ -17,7 +17,7 @@ const gif = [
 ]
 
 const imageLinks = [
-    'hyunjin0101.github.io/totoro-poster/', // '1.jpg'에 연결된 링크
+    'https://hyunjin0101.github.io/totoro-poster/', // '1.jpg'에 연결된 링크
     'https://hyunjin0101.github.io/cat-poster/', // '7.jpg'에 연결된 링크
     'https://hyunjin0101.github.io/haul-poster/', // '3.jpeg'에 연결된 링크
     'https://hyunjin0101.github.io/sen-poster/', // '4.jpg'에 연결된 링크
