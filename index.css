@@ -205,30 +205,29 @@
     
     /* 본문 좌우 화살표 버튼 */
     .middle-button {
-            
-            background-color: blanchedalmond;
-            border: none;
-            width: 40px;
-            height: 40px;
-            padding: 10px 15px;
-            position: absolute;
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-            top: 50%;
-            color: white;
-            transition: transform 0.3s;
-        }
+        background-color: blanchedalmond;
+        border: none;
+        width: 40px;
+        height: 40px;
+        padding: 10px 15px;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        top: 50%;
+        color: white;
+        transition: transform 0.3s;
+    }
   
         #prevBtn {
             left: 10px;
-            background-image: url(button1.png);
+            background-image: url(buttonN1.png);
             z-index: 2;
         }
   
         #nextBtn {
             right: 10px;
-            background-image: url(button2.png);
+            background-image: url(buttonN2.png);
             z-index: 2;
         }
   
