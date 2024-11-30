@@ -1,291 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-     /* Reset Styles */
-     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Ghibli-Main-Page</title>
+    <link rel="stylesheet" href="index.css">
 
-      /*페이지 기본 설정 */
-     body{
-        display: flex;
-        min-height: 100vh;
-        /* align-items: center; */
-        justify-content: center;
-        background-color: #f2efe4;
-        font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-        overflow-y: scroll; /*주의 스크롤 확인할것*/
-        
-    }
-
-     /* Main container */
-     .container {
-      width: 100%;
-      max-width: 900px;
-      background-color: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      padding: 30px;
-      text-align: center;
-      border: 3px solid #e5d9b9;
-    }
-
-    .intro-section {
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        border-radius: 10px;
-    }
-
-     /* 소개란 */
-    .intro-container {
-        margin: 2% 0 2% 0;
-        position: relative;
-        width: 60%;
-        max-width: 400px;
-        background-color: rgba(255, 255, 240, 0.9);
-        padding: 30px;
-        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
-        border: 2px solid #c1e1ec;
-        border-radius: 15px;
-        text-align: center;
-        z-index: 2;
-    }
-
-    /* 소개란 제목 스타일 */
-    .intro-title {
-        font-size: 2.2rem;
-        font-weight: bold;
-        color: #5d4037;
-        font-family: 'Garamond', 'Papyrus', sans-serif;
-        letter-spacing: 1px;
-        margin-bottom: 0;
-    }
-
-    /* 소개란 뒷 배경 GIF*/
-    .gif-container {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 10px;
-        width: 111%;
-        /* min-height:35vh; */
-        height: 100%;
-        z-index: 1;
-        opacity: 0.6; /* GIF 이미지 투명도 */
-        overflow: hidden;
-    }
-
-    /* 소개란 뒷 배경 GIF 속성*/
-    .gif-center {
-        position: absolute;
-        left: 5%;
-        right: 5%;
-        top: 0;
-        border-radius: 10px;
-        width: 90%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.9);
-    }
-
-    /* 상단 게임 메뉴 */
-    .top-right-menu {
-        position: fixed; /* 화면에 고정 */
-        top: 20px;       /* 상단 여백 */
-        right: 20px;     /* 우측 여백 */
-        z-index: 100;    /* GIF보다 위에 위치 */
-        text-align: center;
-    }
-
-    #main-button {
-        background-color: #6abf69; /* 자연 친화적인 초록색 */
-        color: white;
-        border: 2px solid #4e7a4f; /* 어두운 테두리 */
-        padding: 10px 20px;
-        border-radius: 15px; /* 버튼 둥글게 */
-        font-size: 1rem;
-        font-weight: bold;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 부드러운 그림자 */
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    #main-button:hover {
-        background-color: #4e7a4f; /* 마우스 오버 시 어두운 초록색 */
-        color: #f2f2f2; /* 텍스트 밝게 */
-    }
-
-    #dropdown-menu {
-        margin-top: 15px;
-        display: none;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.95); /* 반투명 흰색 배경 */
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* 드롭다운 그림자 */
-    }
-
-    .submenu-button {
-        background-color: #f9f7d9; /* 따뜻한 노란색 */
-        color: #5d4037; /* Ghibli의 차분한 갈색 */
-        border: 2px solid #d4b483; /* 테두리 색상 */
-        padding: 10px;
-        margin-bottom: 5px;
-        border-radius: 10px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .hidden {
-    display: none;
-    }
-
-    .submenu-button:hover {
-        background-color: #d4b483; /* 마우스 오버 시 더 밝은 갈색 */
-        color: white;
-    }
-
-    /*상단-본문 컨테이너 분리선 */
-    .divider-horizontal {
-      width: 100%;
-      height: 1px;
-      background-color: rgb(223, 221, 168);
-      margin: 15px 0px 15px;
-    }
-
-    /* 본문 섹션 */
-    .middle-section {
-    background: url('https://i.pinimg.com/736x/b3/f4/0a/b3f40aefb1d6e424544777ed0fbe66d8.jpg') center/cover no-repeat;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding: 0; /* 여백 제거 */
-    margin: 0; /* 여백 제거 */
-    border-radius: 10px;
-    opacity: 0.9;
-
-
-    }
-
-    /* 본문 컨테이너*/
-    .middle-container {
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%; /* 전체 폭으로 설정 */
-    padding: 0; /* 여백 제거 */
-    border-radius: 10px;
-    border: 2px solid #f5c6c6;
-    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    /* 본문 이미지*/
-    .middle-image {
-        max-width: 90%;
-        max-height: 100%;
-        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-        border: 2px solid #d4b483;
-        border-radius: 10px;
-        filter: brightness(0.9);
-    }
-
-    /* 본문 이미지 효과*/
-    .middle-image:hover {
-        transform: scale(1.05);
-        filter: brightness(1);
-    }
-
-    .middle-button {
-        background-color: blanchedalmond;
-        border: none;
-        width: 40px;
-        height: 40px;
-        padding: 10px 15px;
-        position: absolute;
-        background-size: cover;
-        background-position: center;
-        border-radius: 50%;
-        top: 50%;
-        color: white;
-        transition: transform 0.3s;
-    }
-
-    #prevBtn {
-        left: 10px;
-        background-image: url(9.jpg);
-    }
-
-    #nextBtn {
-        right: 10px;
-        background-image: url(9.jpg);
-    }
-
-    .middle-button:active {
-        transform: translateY(-50%) scale(1.2);
-    }
-
-    /* 본문-하단 컨테이너 분리선 */
-    .divider-horizontal2 {
-      width: 100%;
-      height: 1px;
-      background-color: rgb(223, 221, 168);
-      margin: 15px 0px 15px;
-    }
-
-    /* 하단 섹션 */
-    .bottom-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding: 0; /* 여백 제거 */
-    margin: 0; /* 여백 제거 */
-    border-radius: 10px;
-    opacity: 0.9;
-    }
-
-    /* 하단 컨테이너*/
-    .bottom-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%; /* 전체 폭으로 설정 */
-    padding: 0; /* 여백 제거 */
-    border-radius: 10px;
-    border: 2px solid #f5c6c6;
-    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    /* 하단 이미지*/
-    .bottom-gif {
-        max-width: 90%;
-        max-height: 100%;
-        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-        border: 2px solid #d4b483;
-        border-radius: 10px;
-        /* filter: brightness(0.9); */
-    }
-
-    </style>
 </head>
+
 <body>
+
+    <!-- 게임 버튼 -->
     <div class="top-right-menu">
         <button id="main-button" onclick="toggleDropdown()">게임</button>
         <div id="dropdown-menu">
@@ -294,9 +20,12 @@
           <button class="submenu-button" onclick="clickSubButton(3)">캐릭터 맞추기</button>
         </div>
       </div>
+    
+    <!-- 틀 컨테이너 -->  
     <div class="container">
         <!-- 소개란 섹션 -->
         <div class="intro-section">
+            
             <!-- 뒷배경 gif -->
             <div class="gif-container">
                 <img src="가오나시.gif" alt="Ghibli GIF" class="gif-center">
@@ -316,11 +45,13 @@
         <!-- 본문 섹션 -->
         <div class="middle-section">
             <div class="middle-container">
-                <button class="middle-button" id="prevBtn">&#9664;</button>
+                <button class="middle-button" id="prevBtn"><!-- &#9664; --></button>
                 <img src="totoro.jpeg" alt="middle Image" class="middle-image" id="middleImage">
-                <button class="middle-button" id="nextBtn">&#9654;</button>
+                <button class="middle-button" id="nextBtn"><!-- &#9654; --></button>
             </div>
         </div>
+
+        
 
         <!-- 본문//하단 분리선 -->
         <div class="divider-horizontal2"></div>
@@ -329,8 +60,29 @@
             <div class="bottom-container">
                 <img src="토토로-줄넘기.gif" alt="bottom gif" class="bottom-gif" id="bottomgif">
             </div>
+        
+        <!-- 분리선 3 -->
+        <div class="divider-horizontal2"></div> 
 
-    <script src="index.js"></script>       
+        <!-- 로고 -->
+        <div class="logo-Section">
+            <div class="logo-Box">
+            
+                <a href="https://www.ghibli.jp/">
+                    <img src="HP-LOGO.png" alt="지브리-홈페이지" class="img1"><h4 style="color:brown;">공식 홈페이지</h4>
+                </a>
+                
+                <a href="https://x.com/GhibliML">
+                    <img src="X-LOGO.png" alt="지브리-X" class="img1"><h4 style="color:brown;">지브리 X</h4>
+                </a>
+                
+                <a href="https://namu.wiki/w/%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EC%A7%80%EB%B8%8C%EB%A6%AC">
+                    <img src="NM-LOGO.png" alt="지브리-나무위키" class="img1"><h4 style="color:brown;">지브리 나무위키</h4>
+                </a>
+            </div>
+        </div>
+        
+      
 </body>
-
+<script src="index.js"></script> 
 </html>
