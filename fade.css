@@ -1,0 +1,101 @@
+/* 초기 설정 */
+.intro-body {
+    margin: 0;
+    overflow: hidden; /* 애니메이션 중 스크롤 방지 */
+    background-color: #000; /* 배경 검정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.intro-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeOut 1s ease-out 4s forwards; /* 인트로 종료 후 사라짐 */
+}
+
+.main-container.hidden{
+    display: none;
+}
+.intro-image {
+    width: 0;
+    height: 0;
+    border-radius: 50%; /* 원형 */
+    opacity: 0;
+    clip-path: circle(0% at 50% 50%);
+    animation: reveal 4s ease-in-out forwards;
+}
+
+.content-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 화면 중앙 */
+    text-align: center;
+    display: none; /* 초기 숨김 */
+    opacity: 0;
+    color: #fff; /* 텍스트 색상 흰색 */
+    animation: fadeInContent 1.5s ease-out 2s forwards, fadeOutContent 2s ease-out 4s forwards;
+}
+
+/* 이미지 확대 및 실루엣 효과 */
+@keyframes reveal {
+    0% {
+        width: 0;
+        height: 0;
+        clip-path: circle(0% at 50% 50%);
+        opacity: 0;
+    }
+    50% {
+        width: 25%;
+        height: auto;
+        opacity: 0.5;
+        clip-path: circle(25% at 50% 50%);
+    }
+    100% {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        clip-path: none;
+    }
+}
+
+/* 화면 페이드아웃 */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* 콘텐츠 페이드인 */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 콘텐츠 페이드아웃 */
+@keyframes fadeOutContent {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
