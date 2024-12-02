@@ -11,7 +11,7 @@
         min-height: 100vh;
         /* align-items: center; */
         justify-content: center;
-        background-color: #f2efe4;
+        background-color: #201f1f;
         font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
         overflow-y: scroll; /*주의 스크롤 확인할것*/
           
@@ -21,7 +21,7 @@
     .container {
         width: 100%;
         max-width: 900px;
-        background-color: #ffffff;
+        background-color: ivory;
         border-radius: 16px;
         overflow: hidden;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
